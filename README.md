@@ -8,6 +8,15 @@
 ## 验收要求如下 
 ![img.png](img.png)
 
+
+## Quick Start:
+```python
+# CNN
+python CNN.py --model cnn
+# Vit
+python CNN.py --model vit
+```
+
 ## Level1: 
 + 在`Net`类的`__init__`方法中,添加`self.conv`,保证上一层的输出维度与下一层的输入维度一致即可
 + 在`Net`类的`forward`方法中, 把`__init__`中定义的层加进去即可(保证上一层的输出维度与下一层的输入维度一致即可)
