@@ -70,8 +70,9 @@ class Net(nn.Module):
 4. add `cls_tokens`(做一个dim=1的concat): input: `[bs, num_patches_in_h * num_patches_in_w, embed_dim]` -> output: `[bs, num_patches_in_h * num_patches_in_w + 1, embed_dim]`
    (相当于给每句话加上了一个`<cls>`, 目的是作为一个**更加公平的分类token**)
 5. `position_embedding`: 维度不变, 只是给一个相同的tensor和前面相加,这里区别于 `position_encoding`(它是不可学习的,具体可见《Attention is all you need》)
-
 这时候已经变成NLP里面的形式了,后面就正常当NLP处理即可
+
+
 6. `Encoder`: 里面有`depth`层`EncoderLayer`
 7. `EncoderLayer`: 里面是`MultiheadAttention`和`FeedForward`
 8. `MultiheadAttention`: 里面有`num_heads`个`Attention`
